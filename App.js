@@ -13,9 +13,8 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="MealsCategories" component={CategoriesScreen} />
-        
-        <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
+        <Stack.Screen name="MealsCategories" component={CategoriesScreen} options={{title:'Meals categories'}}/>
+        <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} options={{title:'Meals Overview'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

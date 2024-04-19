@@ -6,7 +6,11 @@ import { CATEGORIES } from "../data/dummy-data";
 const CategoriesScreen = ({ navigation }) => {
   function renderCategoryItem(itemData) {
     function pressHandler() {
-      navigation.navigate("MealsOverview");
+      // This object that we pass as a second parameter value allows us to pass data to the next screen.
+      navigation.navigate("MealsOverview", {
+        categoryId: itemData.item.id,
+        categoryTitle: itemData.item.title,
+      });
     }
 
     return (
@@ -32,7 +36,6 @@ const CategoriesScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "black",
   },
   text: {
     fontSize: 20,
