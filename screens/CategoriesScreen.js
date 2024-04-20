@@ -13,10 +13,12 @@ const CategoriesScreen = ({ navigation }) => {
       });
     }
 
+   
     return (
       <CategoryGridTile
         title={itemData.item.title}
         color={itemData.item.color}
+        id={itemData.item.id}
         onPress={pressHandler}
       />
     );
@@ -27,7 +29,6 @@ const CategoriesScreen = ({ navigation }) => {
         data={CATEGORIES}
         keyExtractor={(item) => item.id}
         renderItem={renderCategoryItem}
-        numColumns={2}
       />
     </View>
   );
