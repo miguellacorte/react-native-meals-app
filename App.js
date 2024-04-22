@@ -1,4 +1,5 @@
 import { StatusBar } from "expo-status-bar";
+import { Button, View } from "react-native";
 
 import CategoriesScreen from "./screens/CategoriesScreen";
 import { NavigationContainer } from "@react-navigation/native";

@@ -13,7 +13,6 @@ const CategoriesScreen = ({ navigation }) => {
       });
     }
 
-   
     return (
       <CategoryGridTile
         title={itemData.item.title}

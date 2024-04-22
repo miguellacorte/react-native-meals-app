@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, FlatList } from "react-native";
 import { MEALS, CATEGORIES } from "../data/dummy-data";
 import MealItem from "../components/MealItem";
 import { useLayoutEffect } from "react";
+import IconButton from "../components/IconButton";
 
 const MealsOverviewScreen = ({ route, navigation }) => {
   const { categoryId } = route.params;
@@ -10,6 +11,18 @@ const MealsOverviewScreen = ({ route, navigation }) => {
   const displayedMeals = MEALS.filter(
     (meal) => meal.categoryIds.indexOf(categoryId) >= 0
   );
+
+  function toggleFavoriteHandler() {
+    console.log('Favorite button pressed');
+  }
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => {
+        return <IconButton onPress={toggleFavoriteHandler}/> 
+      },
+    });
+  }, [navigation]);
 
   useLayoutEffect(() => {
     const categoryTitle = CATEGORIES.find(
